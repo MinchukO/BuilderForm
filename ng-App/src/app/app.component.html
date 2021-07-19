@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="navbar-brand" aria-current="page" routerLink="/main"
+            routerLinkActive="active">Home</a>
+        </li>
+    </ul>
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/login" routerLinkActive="active" *ngIf="!_authService.loggedIn()">Log In</a>
+      </li>
+      <li class="nav-item">
+        <a class="navbar-brand" routerLink="/register"
+          routerLinkActive="active" *ngIf="!_authService.loggedIn()">Register</a>
+      </li>
+        <li class="nav-item">
+          <a 
+            class="navbar-brand"
+            style="cursor:pointer"
+            *ngIf="_authService.loggedIn()"
+            (click)="_authService.loginUser()"
+            (click)="_authService.logoutUser()"
+            >
+            Logout
+          </a>
+        </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<app-test-app ></app-test-app>

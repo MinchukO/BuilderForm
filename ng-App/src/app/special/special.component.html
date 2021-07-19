@@ -1,0 +1,25 @@
+
+<div class="container-fluid">
+  <h2>Form Builder</h2>
+  <form action="">
+    <input type="text" class="form-control mb-3">
+    <textarea name="" id="" cols="30" rows="10" class="form-control mb-3"></textarea>
+    <button class="btn btn-primary mb-3" type="submit">Submit</button>
+    
+    <div class="form-check mb-3">
+      <input type="checkbox" name="" id="x" class="form-check-input">
+      <label for="x" class="form-check-label">Label</label>
+    </div>
+    
+    
+    <div class="form-group">
+      <select name="" id="" class="form-select">
+        <option selected value="">Select...</option>
+        <option value="" *ngFor="let topic of topics">{{topic}}</option>
+      </select>
+    </div>
+    <p>{{text}}</p>
+    <input type="text" ng-module="text">
+    <button type="button" (click)="Handle()">Add</button>
+  </form>
+</div>
